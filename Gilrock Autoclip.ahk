@@ -1,15 +1,15 @@
-﻿#NoEnv
+#NoEnv
 #SingleInstance Force
 SetBatchLines, -1
 
 ; Global variables
 global ColorList := []
-global RarityList := [] ; Parallel array for rarities
+global RarityList := []
 global ClipKey1 := ""
 global ClipKey2 := ""
 global ClipKey3 := ""
 global IsMonitoring := false
-global CaptureDelay := 15000 ; 15 seconds in milliseconds
+global CaptureDelay := 15000
 global DiscordWebhook := ""
 global DiscordUserID := ""
 global EnableWebhook := false
@@ -30,13 +30,13 @@ colorCount := ColorList.MaxIndex()
 if (!colorCount) {
     ; Format: Add color and rarity at same index
     ColorList.Push("0xFEFFC5")
-    RarityList.Push("50M+")
+    RarityList.Push("Divine (50M+)")
     
     ColorList.Push("0xFFB280")
-    RarityList.Push("100M+")
+    RarityList.Push("Immortal (250M+)")
     
     ColorList.Push("0xD480FE")
-    RarityList.Push("1B+")
+    RarityList.Push("Eternal (1B+)")
     
     ; To add more colors:
     ; ColorList.Push("0xYOURCOLOR")
@@ -51,8 +51,8 @@ Gui, Font, s10
 Gui, Add, Text, x10 y10 w400, Created by Deakidoo
 
 ; Get screen resolution and set detection point to center
-SysGet, ScreenWidth, 78  ; SM_CXVIRTUALSCREEN
-SysGet, ScreenHeight, 79 ; SM_CYVIRTUALSCREEN
+SysGet, ScreenWidth, 78
+SysGet, ScreenHeight, 79
 DetectionX := ScreenWidth // 2
 DetectionY := ScreenHeight // 2
 
